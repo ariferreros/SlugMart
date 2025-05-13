@@ -1,1 +1,0 @@
-//Functions like dragging scanning and clicking
