@@ -1,5 +1,5 @@
 // src/GameScreen.js
-import { Container, Graphics } from 'pixi.js'
+import { Container, Graphics, Assets, Sprite } from 'pixi.js'
 
 export async function loadGameScreen(app) {
   const scene = new Container()
@@ -8,6 +8,33 @@ export async function loadGameScreen(app) {
   // load game sceen assets, maybe can like use a bundle
   // hopefully can just reuse this screen for the different days
   // and have like a counter on top for the food, day number, and characters
+
+  const backgroundTexture = await Assets.load(
+    './assets/environment/filler_background_replace_later.png'
+  )
+  const bagTexture = await Assets.load(
+    './assets/environment/filler_bag_replace_later.png'
+  )
+  const counterTexture = await Assets.load(
+    './assets/environment/filler_counter_replace_later.png'
+  )
+  const registerTexture = await Assets.load(
+    './assets/environment/filler_register_replace_later.png'
+  )
+
+  const background = new Sprite(backgroundTexture)
+  background.anchor.set(0.5)
+
+  const bag = new Sprite(bagTexture)
+  bag.anchor.set(0.5)
+
+  const counter = new Sprite(counterTexture)
+  counter.anchor.set(0.5)
+
+  const register = new Sprite(registerTexture)
+  register.anchor.set(0.5)
+
+  scene.addChild(background, bag, counter, register)
 
   return scene
 }
