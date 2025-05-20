@@ -5,22 +5,31 @@ console.log('main running')
   const app = new Application()
 
   // Initialize the application
-  await app.init({ background: '#1099bb', resizeTo: window })
+  await app.init({
+    background: '#1099bb',
+    resizeTo: window,
+  })
 
   // Append the application canvas to the document body
-  document.getElementById('pixi-container').appendChild(app.canvas)
+  document.getElementById('window').appendChild(app.canvas)
 
   const headerStyle = new TextStyle({
+    fontSize: 90,
     fontFamily: 'Arial',
-    fontSize: 24,
-    fontWeight: 'bold',
-    fill: 0xffffff,
+    fill: '#ffffff',
+    align: 'center',
+    justify: 'center',
   })
+  const startButtonTexture = await Assets.load(
+    './assets/environment/filler_start_button_replace_later.png'
+  )
+  const startButtonSprite = new Sprite(startButtonTexture)
+  app.stage.addChild(startButtonSprite)
 
-  const title = new Text({
-    text: 'SlugMart',
-    headerStyle,
-  })
+  const title = new Text({ text: 'SlugMart', style: headerStyle })
+
+  title.position.set(app.screen.width / 2, app.screen.height * 0.25)
+  startButtonSprite.position.set(app.screen.width / 2, app.screen.height / 2)
 
   app.stage.addChild(title)
   // Load the bunny texture
