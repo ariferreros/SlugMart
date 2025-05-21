@@ -19,6 +19,20 @@ export class SceneManager {
     if (newScene) {
       this.currentScene = newScene
       this.app.stage.addChild(this.currentScene)
+
+      this.centerScene()
+    }
+  }
+
+  onResize() {
+    // When the window resizes, update scene position
+    this.centerScene()
+  }
+
+  centerScene() {
+    if (this.currentScene) {
+      this.currentScene.x = this.app.screen.width / 2
+      this.currentScene.y = this.app.screen.height / 2
     }
   }
 }

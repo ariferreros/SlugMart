@@ -19,4 +19,9 @@ import { initDevtools } from '@pixi/devtools'
 
   await sceneManager.changeScene(loadHomeScreen)
   initDevtools({ app })
+  // resize function from chatgpt
+  window.addEventListener('resize', () => {
+    app.renderer.resize(window.innerWidth, window.innerHeight)
+    sceneManager.onResize()
+  })
 })()
