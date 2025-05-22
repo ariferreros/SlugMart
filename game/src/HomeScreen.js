@@ -12,6 +12,11 @@ export async function loadHomeScreen(app) {
 
   const title = new Text({ text: 'SlugMart', style: titleStyle })
   title.anchor.set(0.5)
+  
+
+  //Set background for homecsreen
+  document.body.style.backgroundImage = "url('filler_homescreen_replace_later.png')";
+  document.body.style.backgroundSize = "cover";
 
   const startButtonTexture = await Assets.load(
     './assets/environment/filler_start_button_replace_later.png'
