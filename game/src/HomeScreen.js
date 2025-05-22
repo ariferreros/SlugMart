@@ -15,7 +15,7 @@ export async function loadHomeScreen(app) {
   
 
   //Set background for homecsreen
-  document.body.style.backgroundImage = "url('filler_homescreen_replace_later.png')";
+  document.body.style.backgroundImage = "url('./assets/environment/filler_homescreen_replace_later.png')";
   document.body.style.backgroundSize = "cover";
 
   const startButtonTexture = await Assets.load(
