@@ -32,13 +32,15 @@ export async function loadGameScreen(app) {
 
   const counter = new Sprite(counterTexture)
   counter.anchor.set(0.5)
+  // counter.scale.set(0.5)
+  counter.position.y = 120
 
   const register = new Sprite(registerTexture)
   register.scale.set(0.3)
-  register.position.x = 20
+  register.position.x = app.screen.width * 0.1
   console.log(register.position.x)
   register.anchor.set(0.5)
-  register.position.y = 100
+  register.position.y = 10
 
   scene.addChild(background, bag, counter, register)
 
