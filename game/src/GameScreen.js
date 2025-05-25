@@ -1,9 +1,8 @@
 // src/GameScreen.js
 import { Container, Graphics, Assets, Sprite } from 'pixi.js'
-
+import { DraggableItem } from './DraggableItem.js'
 export async function loadGameScreen(app) {
   const scene = new Container()
-  console.log('GAME SCREEN')
 
   // load game sceen assets, maybe can like use a bundle
   // hopefully can just reuse this screen for the different days
@@ -17,6 +16,9 @@ export async function loadGameScreen(app) {
   const bagTexture = await Assets.load('./assets/environment/gameScreenBag.png')
   const counterTexture = await Assets.load('./assets/environment/belt.png')
   const registerTexture = await Assets.load('./assets/environment/register.png')
+  const foodTexture = await Assets.load(
+    './assets/environment/filler_food_item_replace_later.png'
+  )
   const background = new Sprite(backgroundTexture)
   // allows the background image to be set to the height of the window then auto scales the width
   background.height = app.screen.height
@@ -42,6 +44,12 @@ export async function loadGameScreen(app) {
   bag.scale.x = bag.scale.y
   bag.anchor.set(0.5)
   scene.addChild(bag)
+
+  // create new instance of a draggable food item
+  const food = new DraggableItem(foodTexture)
+  food.scale.set(0.3)
+  food.anchor.set(0.5)
+  scene.addChild(food)
   // configure the container
   scene.scale.set(0.5)
   scene.position.set(app.screen.width * 0.5, app.screen.height * 0.5)
