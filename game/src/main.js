@@ -8,7 +8,8 @@ import { initDevtools } from '@pixi/devtools'
 
   await app.init({
     background: '#1099bb',
-    resizeTo: window,
+    width: window.innerWidth,
+    height: window.innerHeight,
     resolution: window.devicePixelRatio || 1,
   })
 

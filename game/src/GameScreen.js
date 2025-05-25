@@ -8,41 +8,43 @@ export async function loadGameScreen(app) {
   // load game sceen assets, maybe can like use a bundle
   // hopefully can just reuse this screen for the different days
   // and have like a counter on top for the food, day number, and characters
-  scene.x = app.screen.width / 2
-  scene.y = app.screen.height / 2
+  // scene.x = app.screen.width / 2
+  // scene.y = app.screen.height / 2
   const backgroundTexture = await Assets.load(
-    './assets/environment/filler_background_replace_later.png'
-  )
-  const bagTexture = await Assets.load(
-    './assets/environment/filler_bag_replace_later.png'
-  )
-  const counterTexture = await Assets.load(
-    './assets/environment/filler_counter_replace_later.png'
-  )
-  const registerTexture = await Assets.load(
-    './assets/environment/filler_register_replace_later.png'
+    './assets/environment/gameScreenBG.png'
   )
 
+  const bagTexture = await Assets.load('./assets/environment/gameScreenBag.png')
+  const counterTexture = await Assets.load('./assets/environment/belt.png')
+  const registerTexture = await Assets.load('./assets/environment/register.png')
   const background = new Sprite(backgroundTexture)
+  // allows the background image to be set to the height of the window then auto scales the width
+  background.height = app.screen.height
+  background.scale.x = background.scale.y
   background.anchor.set(0.5)
-
-  const bag = new Sprite(bagTexture)
-  bag.scale.set(0.5)
-  bag.anchor.set(0.5)
+  scene.addChild(background)
 
   const counter = new Sprite(counterTexture)
+  counter.height = app.screen.height
+  counter.scale.x = counter.scale.y
   counter.anchor.set(0.5)
+  scene.addChild(counter)
   // counter.scale.set(0.5)
-  counter.position.y = 120
 
   const register = new Sprite(registerTexture)
-  register.scale.set(0.3)
-  register.position.x = app.screen.width * 0.1
-  console.log(register.position.x)
+  register.height = app.screen.height
+  register.scale.x = register.scale.y
   register.anchor.set(0.5)
-  register.position.y = 10
+  scene.addChild(register)
 
-  scene.addChild(background, bag, counter, register)
+  const bag = new Sprite(bagTexture)
+  bag.height = app.screen.height
+  bag.scale.x = bag.scale.y
+  bag.anchor.set(0.5)
+  scene.addChild(bag)
+  // configure the container
+  scene.scale.set(0.5)
+  scene.position.set(app.screen.width * 0.5, app.screen.height * 0.5)
 
   return scene
 }
