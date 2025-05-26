@@ -15,13 +15,14 @@ export async function loadHomeScreen(app) {
   )
   const background = new Sprite(backgroundTexture)
   // allows the background image to be set to the height of the window then auto scales the width
+  await app.init({ background: './assets/environment/startbutton.png', resizeTo: window });
   background.width = app.screen.width
   background.height = app.screen.height
   background.position.set(0, 0)
   background.anchor.set(0) 
 
   startContainer.addChild(background)
-  
+
   const startButton = new Sprite(startButtonTexture)
   startButton.anchor.set(0.5)
   startButton.scale.set(0.35)
