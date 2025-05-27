@@ -1,6 +1,5 @@
 import { Container, Graphics, Sprite, Text, TextStyle, Assets } from 'pixi.js'
-import { loadGameScreen } from './GameScreen.js'
-
+import { startDay1 } from './Days/script.js'
 export async function loadHomeScreen(app) {
   const startContainer = new Container()
 
@@ -37,11 +36,12 @@ export async function loadHomeScreen(app) {
     startButton.scale.set(0.35)
   })
   startButton.on('pointerdown', async () => {
-    const sceneManager = app.sceneManager
-    await sceneManager.changeScene(loadGameScreen)
+    // const sceneManager = app.sceneManager
+    startDay1(app)
+    // await sceneManager.changeScene(loadGameScreen)
   })
 
-  startContainer.scale.set(0.5)
+  // startContainer.scale.set(0.5)
   startContainer.position.set(app.screen.width * 0.5, app.screen.height * 0.5)
   startContainer.addChild(startButton)
   return startContainer

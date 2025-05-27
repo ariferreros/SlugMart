@@ -1,31 +1,38 @@
-// handles switching between scenes ex: game, home, game over, loading
-
 export class SceneManager {
   constructor(app) {
     this.app = app
     this.currentScene = null
+    this.foreground = null // Track foreground separately
   }
 
-  // destroys current container (scene) and loads new scene
   async changeScene(loadScene) {
-    // remove current scene
+    // Remove current scene
     if (this.currentScene) {
       this.app.stage.removeChild(this.currentScene)
       this.currentScene.destroy({ children: true })
+      this.foreground = null // Clear foreground reference
     }
 
-    // load new scene
+    // Load new scene
     const newScene = await loadScene(this.app)
     if (newScene) {
       this.currentScene = newScene
       this.app.stage.addChild(this.currentScene)
-
       this.centerScene()
     }
   }
 
-  onResize() {
-    // When the window resizes, update scene position
+  async addToScene(scene) {
+    if (!this.currentScene) return
+
+    this.foreground = scene
+    this.currentScene.addChild(scene)
+
+    // Position foreground relative to background
+    scene.position.set(0, 0) // Align with background
+    scene.scale.set(1) // Inherit parent's scale
+
+    // If you need to center the combined scene
     this.centerScene()
   }
 
@@ -34,5 +41,9 @@ export class SceneManager {
       this.currentScene.x = this.app.screen.width / 2
       this.currentScene.y = this.app.screen.height / 2
     }
+  }
+
+  onResize() {
+    this.centerScene()
   }
 }
