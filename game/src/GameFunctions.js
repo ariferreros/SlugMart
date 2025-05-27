@@ -71,10 +71,10 @@ export function createDropZone(screen) {
   return dropZone
 }
 
-export function loadFood(scene, trackedFoodItems, dropZone, foodItems, screen) {
-  const startX = screen.width * -0.3
-  const yPos = screen.height * 0.17
-  const xSpacing = screen.width * 0.1
+export function loadFood(scene, trackedFoodItems, dropZone, foodItems, app) {
+  const startX = app.screen.width * -0.3
+  const yPos = app.screen.height * 0.17
+  const xSpacing = app.screen.width * 0.1
 
   foodItems.forEach((foodPath, i) => {
     Assets.load(foodPath).then((texture) => {
@@ -93,7 +93,7 @@ export function loadFood(scene, trackedFoodItems, dropZone, foodItems, screen) {
         }
         originalRemove()
         if (trackedFoodItems.length === 0) {
-          console.log('All items removed - level complete!')
+          checkCharacterComplete(app)
         }
       }
 
@@ -144,4 +144,11 @@ export async function loadHomeScreen(app) {
   startContainer.position.set(app.screen.width * 0.5, app.screen.height * 0.5)
   startContainer.addChild(startButton)
   return startContainer
+}
+
+export function checkCharacterComplete(app) {
+  console.log('All items bagged')
+  console.log('Starting next day (repeating day one here)')
+  startDay1(app)
+  // also check if there is any more character dialog to go through
 }
