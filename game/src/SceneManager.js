@@ -32,7 +32,6 @@ export class SceneManager {
     scene.position.set(0, 0) // Align with background
     scene.scale.set(1) // Inherit parent's scale
 
-    // If you need to center the combined scene
     this.centerScene()
   }
 

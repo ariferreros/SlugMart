@@ -1,7 +1,7 @@
 // src/main.js
 import { Application } from 'pixi.js'
 import { SceneManager } from './SceneManager.js'
-import { loadHomeScreen } from './HomeScreen.js'
+import { loadHomeScreen } from './GameFunctions.js'
 import { initDevtools } from '@pixi/devtools'
 ;(async () => {
   const app = new Application()
