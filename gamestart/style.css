@@ -69,3 +69,15 @@
   position: absolute;
   bottom: 0;
 }
+
+.scan-zone {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  /* top: 70%; */
+  left: 60%;
+  bottom: 0;
+  /* translate: 40% -90%; */
+  background-color: rgba(229, 7, 7, 0.3);
+  border: 2px dashed #d80707;
+}

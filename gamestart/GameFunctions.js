@@ -1,6 +1,6 @@
 // GameFunctions.js
 import * as script from './script.js'
-import * as character from './character/data.js'
+// import * as character from './character/data.js'
 export async function clearScene() {
   $('#app').empty()
 }
@@ -17,18 +17,12 @@ export async function loadBackground() {
   return $bg
 }
 
-export async function loadCharacter(characterName) {
-  const image = character[characterName].image
+export async function loadCharacter(character) {
+  const image = character.image
+  const name = character.name
+  console.log('loading character', name)
   const $character = $('<img>').addClass('character').attr('src', `${image}`)
-  // .css({
-  //   width: 'auto',
-  //   height: '100%',
-  //   'object-fit': 'contain',
-  //   position: 'absolute',
-  //   top: '50%',
-  //   left: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  // })
+
   $('#app').append($character)
 }
 
@@ -86,11 +80,17 @@ export function createDropZone() {
   return $dropZone
 }
 
-export function loadFood(trackedFoodItems, characterName, day, $dropZone) {
+export function createScanZone() {
+  const $scanZone = $('<div>').addClass('scan-zone')
+  $('#app').append($scanZone)
+  return $scanZone
+}
+
+export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
   const startX = window.innerWidth * 0.2
   const yPos = window.innerHeight * 0.17
   const xSpacing = window.innerWidth * 0.1
-  const foodItems = character[characterName][day].food
+  //   const foodItems = character[characterName][day].food
   //   console.log(foodPath)
   foodItems.forEach((foodPath, i) => {
     const $item = $('<img>')
@@ -170,7 +170,8 @@ export async function loadHomeScreen() {
     .attr('src', './public/assets/environment/startbutton.png')
 
   $startButton.on('click', async function () {
-    script.startDay1()
+    // start the first day with the first character
+    script.startDay(0, 0)
   })
 
   $container.append($startButton)
@@ -180,6 +181,12 @@ export async function loadHomeScreen() {
 
 export function checkCharacterComplete() {
   console.log('All items bagged')
-  console.log('Starting next day (repeating day one here)')
-  script.startDay1()
+  script.nextCharacter()
 }
+
+// export function checkDayComplete() {
+//   console.log('All items bagged AND all customers have left')
+
+//   console.log('Starting next day')
+//   script.nextCharacter()
+// }
