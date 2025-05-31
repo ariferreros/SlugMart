@@ -7,37 +7,70 @@
           "image": "./public/assets/character/jim.png",
           "description": "description",
           "startDialogue": "Hey, it's you again!",
-          "endDialogue": "All done",
-          "food": [
-            {
-              "key": "chicken",
-              "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            },
-            {
-              "key": "protein-powder",
-              "dialogue": "Needed this for my workout today, I have to make sure my diet is perfect!",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            }
+          "endDialogue": "Thank you, have a nice day!",
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
           ]
         },
         {
           "name": "cammy",
           "image": "./public/assets/character/jim.png",
           "description": "description",
-          "startDialogue": "0,1",
-          "endDialogue": "That's all I need for today. Thanks for coming by!",
-          "food": [
-            {
-              "key": "chicken",
-              "dialogue": "unngaaa",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            },
-            {
-              "key": "protein-powder",
-              "dialogue": "bungaaa",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            }
+          "startDialogue": "hello",
+          "endDialogue": "done",
+          "groceries": [
+            [
+              {
+                "dialogue": "meaaaat",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  },
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
           ]
         }
       ]
@@ -50,17 +83,31 @@
           "description": "description",
           "startDialogue": "3",
           "endDialogue": "That's all I need for today. Thanks for coming by!",
-          "food": [
-            {
-              "key": "chicken",
-              "dialogue": "chicken on day 2",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            },
-            {
-              "key": "protein-powder",
-              "dialogue": "Needed this for my workout today, I have to make sure my diet is perfect!",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            }
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
           ]
         },
         {
@@ -69,17 +116,31 @@
           "startDialogue": "IM NEW",
           "endDialogue": "That's all I need for today. Thanks for coming by!",
           "description": "description",
-          "food": [
-            {
-              "key": "chicken",
-              "dialogue": "unngaaa",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            },
-            {
-              "key": "protein-powder",
-              "dialogue": "bungaaa",
-              "image": "./public/assets/food/filler_food_item_replace_later.png"
-            }
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
           ]
         }
       ]

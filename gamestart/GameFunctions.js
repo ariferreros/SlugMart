@@ -87,10 +87,13 @@ export function createScanZone() {
 }
 
 // from chatgpt
-export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
+export function loadFood(trackedFoodItems, groceries, $dropZone, $scanZone) {
   let startX = window.innerWidth * 0.2
   let startY = window.innerHeight * 0.17
   const xSpacing = window.innerWidth * 0.1
+
+  // Track which dialogues have been triggered
+  const triggeredDialogues = new Set()
 
   // Setup drop zone
   $dropZone.droppable({
@@ -110,65 +113,80 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
     },
   })
 
-  foodItems.forEach((food, i) => {
-    const $item = $('<img>')
-      .attr('src', food.image)
-      .css({
-        position: 'fixed',
-        width: '100px',
-        height: 'auto',
-        left: `${startX + i * xSpacing}px`,
-        top: `${startY}px`,
-        cursor: 'grab',
+  // Flatten the groceries array and keep track of indices
+  let foodIndex = 0
+  groceries.forEach((groceryGroup, groupIndex) => {
+    groceryGroup.forEach((grocery) => {
+      grocery.food.forEach((foodItem) => {
+        const $item = $('<img>')
+          .attr('src', foodItem.image)
+          .css({
+            position: 'fixed',
+            width: '100px',
+            height: 'auto',
+            left: `${startX + foodIndex * xSpacing}px`,
+            top: `${startY}px`,
+            cursor: 'grab',
+          })
+          .data('dialogue', grocery.dialogue) // Dialogue from the grocery group
+          .data('foodName', foodItem.key)
+          .data('foodIndex', foodIndex)
+          .data('hasBeenScanned', false)
+          .data('originalLeft', `${startX + foodIndex * xSpacing}px`)
+          .data('originalTop', `${startY}px`)
+          .data('groupIndex', groupIndex) // Track which group this belongs to
+
+        $item.draggable({
+          start: function () {
+            $(this).css('z-index', '100')
+          },
+          drag: function (event, ui) {
+            const itemRect = ui.helper[0].getBoundingClientRect()
+            const scanRect = $scanZone[0].getBoundingClientRect()
+            const isOverlapping = checkOverlap(itemRect, scanRect)
+
+            if (isOverlapping && !$(this).data('hasBeenScanned')) {
+              $(this).data('hasBeenScanned', true)
+
+              // Only trigger dialogue if this group's dialogue hasn't been shown yet
+              const groupIndex = $(this).data('groupIndex')
+              if (!triggeredDialogues.has(groupIndex)) {
+                triggeredDialogues.add(groupIndex)
+                dialogue.onItemScanned($(this).data('dialogue'))
+              }
+            }
+          },
+          stop: function () {
+            $(this).css('z-index', '')
+            if (
+              !$(this).data('hasBeenScanned') &&
+              !$(this).data('wasDropped')
+            ) {
+              $(this).animate(
+                {
+                  left: $(this).data('originalLeft'),
+                  top: $(this).data('originalTop'),
+                },
+                200
+              )
+            }
+            $(this).data('wasDropped', false)
+          },
+        })
+
+        $item.on('dragstart', function () {
+          if ($(this).data('hasBeenScanned')) {
+            $dropZone.droppable('enable')
+          } else {
+            $dropZone.droppable('disable')
+          }
+        })
+
+        trackedFoodItems.push($item)
+        $('#app').append($item)
+        foodIndex++
       })
-      .data('dialogue', food.dialogue)
-      .data('foodName', food.key)
-      .data('foodIndex', i)
-      .data('hasBeenScanned', false) // Permanent flag for scan status
-      .data('originalLeft', `${startX + i * xSpacing}px`)
-      .data('originalTop', `${startY}px`)
-
-    $item.draggable({
-      start: function () {
-        $(this).css('z-index', '100')
-      },
-      drag: function (event, ui) {
-        const itemRect = ui.helper[0].getBoundingClientRect()
-        const scanRect = $scanZone[0].getBoundingClientRect()
-        const isOverlapping = checkOverlap(itemRect, scanRect)
-
-        if (isOverlapping && !$(this).data('hasBeenScanned')) {
-          $(this).data('hasBeenScanned', true)
-          dialogue.onItemScanned($(this).data('dialogue'))
-        }
-      },
-      stop: function () {
-        $(this).css('z-index', '')
-        // If not scanned and not dropped in zone, return to original position
-        if (!$(this).data('hasBeenScanned') && !$(this).data('wasDropped')) {
-          $(this).animate(
-            {
-              left: $(this).data('originalLeft'),
-              top: $(this).data('originalTop'),
-            },
-            200
-          )
-        }
-        $(this).data('wasDropped', false)
-      },
     })
-
-    // Make droppable only if scanned
-    $item.on('dragstart', function () {
-      if ($(this).data('hasBeenScanned')) {
-        $dropZone.droppable('enable')
-      } else {
-        $dropZone.droppable('disable')
-      }
-    })
-
-    trackedFoodItems.push($item)
-    $('#app').append($item)
   })
 
   function checkOverlap(rect1, rect2) {
@@ -180,7 +198,6 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
     )
   }
 }
-
 // adds scene-bg to scene-container
 // creates startbutton with class button and id start-button
 // on click runs start day 1 script

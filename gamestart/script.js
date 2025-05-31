@@ -27,7 +27,7 @@ export function startDay(dayIndex, characterIndex) {
   const trackedFoodItems = []
   game.loadFood(
     trackedFoodItems,
-    data.days[dayIndex].characters[characterIndex].food,
+    data.days[dayIndex].characters[characterIndex].groceries,
     dropZone,
     scanZone
   )
