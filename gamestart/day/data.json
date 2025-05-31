@@ -6,18 +6,19 @@
           "name": "Jim",
           "image": "./public/assets/character/jim.png",
           "description": "description",
+          "startDialogue": "Hey, it's you again!",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
           "food": [
-            "./public/assets/food/filler_food_item_replace_later.png",
-            "./public/assets/food/filler_food_item_replace_later.png",
-            "./public/assets/food/filler_food_item_replace_later.png"
-          ],
-          "dialogue": [
-            "Hi there! How can I help you today?",
-            "I'm Jim, your friendly and helpful character. How can I help you today?",
-            "Hey there! How can I help you today?",
-            "Hello! How can I help you today?",
-            "Hi! How can I help you today?",
-            "Hey! How can I help you today?"
+            {
+              "key": "chicken",
+              "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            },
+            {
+              "key": "protein-powder",
+              "dialogue": "Needed this for my workout today, I have to make sure my diet is perfect!",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            }
           ]
         },
         {
@@ -42,7 +43,12 @@
           "name": "Jim",
           "image": "./public/assets/character/jim.png",
           "description": "description",
-          "food": ["./public/assets/food/filler_food_item_replace_later.png"],
+          "food": [
+            {
+              "key": "chicken",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            }
+          ],
           "dialogue": [
             "Hi there! How can I help you today?",
             "I'm Jim, your friendly and helpful character. How can I help you today?",

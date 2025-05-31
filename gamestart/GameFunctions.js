@@ -1,5 +1,6 @@
 // GameFunctions.js
 import * as script from './script.js'
+import * as dialogue from './TextFunctions.js'
 // import * as character from './character/data.js'
 export async function clearScene() {
   $('#app').empty()
@@ -92,9 +93,27 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
   let startY = window.innerHeight * 0.17
   const xSpacing = window.innerWidth * 0.1
 
-  foodItems.forEach((foodPath, i) => {
+  // Setup drop zone
+  $dropZone.droppable({
+    drop: function (event, ui) {
+      const $draggedItem = ui.helper
+      const foodId = $draggedItem.data('foodId')
+
+      trackedFoodItems = trackedFoodItems.filter(
+        (item) => item && item.data('foodId') !== foodId
+      )
+      $draggedItem.remove()
+
+      console.log('Remaining food:', trackedFoodItems.length)
+      if (trackedFoodItems.length === 0) {
+        checkCharacterComplete()
+      }
+    },
+  })
+
+  foodItems.forEach((food, i) => {
     const $item = $('<img>')
-      .attr('src', foodPath)
+      .attr('src', food.image)
       .css({
         position: 'fixed',
         width: '100px',
@@ -103,62 +122,65 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
         top: `${startY}px`,
         cursor: 'grab',
       })
-      .data('foodId', i)
+      .data('dialogue', food.dialogue)
+      .data('foodId', food.key)
+      .data('hasBeenScanned', false) // Permanent flag for scan status
+      .data('originalLeft', `${startX + i * xSpacing}px`)
+      .data('originalTop', `${startY}px`)
 
-    // Store hasPassedScanZone as a data attribute on the item
-    $item.data('hasPassedScanZone', false)
-
-    // Make the item draggable
     $item.draggable({
       start: function () {
         $(this).css('z-index', '100')
-        $(this).data('hasPassedScanZone', false) // Reset on new drag
       },
       drag: function (event, ui) {
-        // Check if passing through scan zone during drag
         const itemRect = ui.helper[0].getBoundingClientRect()
         const scanRect = $scanZone[0].getBoundingClientRect()
+        const isOverlapping = checkOverlap(itemRect, scanRect)
 
-        if (checkOverlap(itemRect, scanRect)) {
-          $(this).data('hasPassedScanZone', true)
+        if (isOverlapping && !$(this).data('hasBeenScanned')) {
+          $(this).data('hasBeenScanned', true)
+          dialogue.onItemScanned($(this).data('dialogue'))
         }
       },
       stop: function () {
         $(this).css('z-index', '')
-      },
-    })
-
-    // Make the drop zone droppable
-    $dropZone.droppable({
-      drop: function (event, ui) {
-        if (ui.draggable.data('hasPassedScanZone')) {
-          const foodId = ui.draggable.data('foodId')
-          trackedFoodItems = trackedFoodItems.filter(
-            (item) => item.data('foodId') !== foodId
+        // If not scanned and not dropped in zone, return to original position
+        if (!$(this).data('hasBeenScanned') && !$(this).data('wasDropped')) {
+          $(this).animate(
+            {
+              left: $(this).data('originalLeft'),
+              top: $(this).data('originalTop'),
+            },
+            200
           )
-          ui.draggable.remove()
-
-          console.log(trackedFoodItems)
-          if (trackedFoodItems.length === 0) {
-            checkCharacterComplete()
-          }
         }
+        $(this).data('wasDropped', false)
       },
     })
 
-    function checkOverlap(rect1, rect2) {
-      return (
-        rect1.left < rect2.right &&
-        rect1.right > rect2.left &&
-        rect1.top < rect2.bottom &&
-        rect1.bottom > rect2.top
-      )
-    }
+    // Make droppable only if scanned
+    $item.on('dragstart', function () {
+      if ($(this).data('hasBeenScanned')) {
+        $dropZone.droppable('enable')
+      } else {
+        $dropZone.droppable('disable')
+      }
+    })
 
     trackedFoodItems.push($item)
     $('#app').append($item)
   })
+
+  function checkOverlap(rect1, rect2) {
+    return (
+      rect1.left < rect2.right &&
+      rect1.right > rect2.left &&
+      rect1.top < rect2.bottom &&
+      rect1.bottom > rect2.top
+    )
+  }
 }
+
 // adds scene-bg to scene-container
 // creates startbutton with class button and id start-button
 // on click runs start day 1 script

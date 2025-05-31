@@ -7,11 +7,13 @@
 // } from '../GameFunctions.js'
 // import { food } from '../Char1/text.js'
 import * as game from './GameFunctions.js'
+import * as dialog from './TextFunctions.js'
 const data = await importJSON()
 let maxDays = data.days.length
 let maxChars = data.days[0].characters.length
 let currentDay = 0
 let currentChar = 0
+let currentDialogIndex = 0
 export function startDay(dayIndex, characterIndex) {
   console.log(data)
   console.log('Starting Day 1 and first character')
@@ -22,6 +24,7 @@ export function startDay(dayIndex, characterIndex) {
   game.loadForeground()
   const scanZone = game.createScanZone()
   const dropZone = game.createDropZone()
+  dialog.loadCharacterTextBox()
   const trackedFoodItems = []
   game.loadFood(
     trackedFoodItems,
@@ -29,7 +32,10 @@ export function startDay(dayIndex, characterIndex) {
     dropZone,
     scanZone
   )
+
+  // beginDialog()
 }
+
 export function nextCharacter() {
   currentChar++
   if (currentChar >= maxChars) {

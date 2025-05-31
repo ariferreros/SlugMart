@@ -9,6 +9,20 @@
   background-color: rgba(0, 0, 0, 0.3);
   border: 2px dashed #000;
 }
+.charactertextbox {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  width: 50%;
+  height: auto;
+  min-height: 100px;
+  background-image: url('public/assets/environment/characterTextBoxBG.png');
+  background-size: 100% 100%; /* width and height, can be %, px or whatever. */
+  z-index: 100;
+}
+
 .scene-container {
   position: fixed;
   top: 0;
