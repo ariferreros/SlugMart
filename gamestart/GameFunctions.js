@@ -86,69 +86,74 @@ export function createScanZone() {
   return $scanZone
 }
 
+// from chatgpt
 export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
-  const startX = window.innerWidth * 0.2
-  const yPos = window.innerHeight * 0.17
+  let startX = window.innerWidth * 0.2
+  let startY = window.innerHeight * 0.17
   const xSpacing = window.innerWidth * 0.1
-  //   const foodItems = character[characterName][day].food
-  //   console.log(foodPath)
+
   foodItems.forEach((foodPath, i) => {
     const $item = $('<img>')
-      .addClass('draggable')
       .attr('src', foodPath)
       .css({
+        position: 'fixed',
         width: '100px',
         height: 'auto',
         left: `${startX + i * xSpacing}px`,
-        top: `${yPos}px`,
+        top: `${startY}px`,
+        cursor: 'grab',
       })
+      .data('foodId', i)
 
-    // Make draggable
-    let isDragging = false
-    let offsetX, offsetY
+    // Store hasPassedScanZone as a data attribute on the item
+    $item.data('hasPassedScanZone', false)
 
-    $item.on('mousedown', function (e) {
-      isDragging = true
-      offsetX = e.clientX - $(this).offset().left
-      offsetY = e.clientY - $(this).offset().top
-      $(this).css('z-index', '100')
-    })
+    // Make the item draggable
+    $item.draggable({
+      start: function () {
+        $(this).css('z-index', '100')
+        $(this).data('hasPassedScanZone', false) // Reset on new drag
+      },
+      drag: function (event, ui) {
+        // Check if passing through scan zone during drag
+        const itemRect = ui.helper[0].getBoundingClientRect()
+        const scanRect = $scanZone[0].getBoundingClientRect()
 
-    $(document).on('mousemove', function (e) {
-      if (!isDragging) return
-
-      $item.css({
-        left: `${e.clientX - offsetX}px`,
-        top: `${e.clientY - offsetY}px`,
-      })
-    })
-
-    $(document).on('mouseup', function () {
-      if (!isDragging) return
-      isDragging = false
-
-      // Check if dropped in drop zone
-      const itemRect = $item[0].getBoundingClientRect()
-      const dropRect = $dropZone[0].getBoundingClientRect()
-
-      if (
-        itemRect.left < dropRect.right &&
-        itemRect.right > dropRect.left &&
-        itemRect.top < dropRect.bottom &&
-        itemRect.bottom > dropRect.top
-      ) {
-        // Item is in drop zone
-        $item.remove()
-        const index = trackedFoodItems.indexOf($item)
-        if (index > -1) {
-          trackedFoodItems.splice(index, 1)
+        if (checkOverlap(itemRect, scanRect)) {
+          $(this).data('hasPassedScanZone', true)
         }
-
-        if (trackedFoodItems.length === 0) {
-          checkCharacterComplete()
-        }
-      }
+      },
+      stop: function () {
+        $(this).css('z-index', '')
+      },
     })
+
+    // Make the drop zone droppable
+    $dropZone.droppable({
+      drop: function (event, ui) {
+        if (ui.draggable.data('hasPassedScanZone')) {
+          const foodId = ui.draggable.data('foodId')
+          trackedFoodItems = trackedFoodItems.filter(
+            (item) => item.data('foodId') !== foodId
+          )
+          ui.draggable.remove()
+
+          console.log(trackedFoodItems)
+          if (trackedFoodItems.length === 0) {
+            checkCharacterComplete()
+          }
+        }
+      },
+    })
+
+    function checkOverlap(rect1, rect2) {
+      return (
+        rect1.left < rect2.right &&
+        rect1.right > rect2.left &&
+        rect1.top < rect2.bottom &&
+        rect1.bottom > rect2.top
+      )
+    }
 
     trackedFoodItems.push($item)
     $('#app').append($item)
