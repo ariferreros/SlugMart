@@ -1,19 +1,16 @@
 export async function loadCharacterTextBox() {
-  const $charactertextbox = $('<div>').addClass('charactertextbox')
+  const $charactertextbox = $('<div>').addClass('charactertextbox').hide()
   $('#app').append($charactertextbox)
-
-  hideCharacterTextBox()
-}
-
-export async function hideCharacterTextBox() {
-  $('#app').find('.charactertextbox').hide()
 }
 
 export async function showCharacterTextBox(text) {
-  $('#app').find('.charactertextbox').show()
-  $('#app').find('.charactertextbox').text(text)
+  return new Promise((resolve) => {
+    const $textbox = $('#app').find('.charactertextbox')
+    $textbox.text(text).hide().fadeIn(400, resolve) // Hide first then fade in
+  })
 }
 
 export async function onItemScanned(text) {
-  showCharacterTextBox(text)
+  await showCharacterTextBox(text)
+  await new Promise((resolve) => setTimeout(resolve, 4000))
 }

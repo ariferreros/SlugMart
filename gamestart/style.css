@@ -70,6 +70,7 @@
 .character {
   width: auto;
   height: 100%;
+  left: -40%;
   object-fit: contain;
   position: absolute;
   bottom: 0;

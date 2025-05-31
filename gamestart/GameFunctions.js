@@ -23,7 +23,6 @@ export async function loadCharacter(character) {
   const name = character.name
   console.log('loading character', name)
   const $character = $('<img>').addClass('character').attr('src', `${image}`)
-
   $('#app').append($character)
 }
 
@@ -97,10 +96,10 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
   $dropZone.droppable({
     drop: function (event, ui) {
       const $draggedItem = ui.helper
-      const foodId = $draggedItem.data('foodId')
+      const foodIndex = $draggedItem.data('foodIndex')
 
       trackedFoodItems = trackedFoodItems.filter(
-        (item) => item && item.data('foodId') !== foodId
+        (item) => item && item.data('foodIndex') !== foodIndex
       )
       $draggedItem.remove()
 
@@ -123,7 +122,8 @@ export function loadFood(trackedFoodItems, foodItems, $dropZone, $scanZone) {
         cursor: 'grab',
       })
       .data('dialogue', food.dialogue)
-      .data('foodId', food.key)
+      .data('foodName', food.key)
+      .data('foodIndex', i)
       .data('hasBeenScanned', false) // Permanent flag for scan status
       .data('originalLeft', `${startX + i * xSpacing}px`)
       .data('originalTop', `${startY}px`)

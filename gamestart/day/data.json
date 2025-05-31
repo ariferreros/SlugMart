@@ -7,7 +7,7 @@
           "image": "./public/assets/character/jim.png",
           "description": "description",
           "startDialogue": "Hey, it's you again!",
-          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "endDialogue": "All done",
           "food": [
             {
               "key": "chicken",
@@ -25,14 +25,19 @@
           "name": "cammy",
           "image": "./public/assets/character/jim.png",
           "description": "description",
-          "food": ["./public/assets/food/filler_food_item_replace_later.png"],
-          "dialogue": [
-            "Hi there! How can I help you today?",
-            "I'm Jim, your friendly and helpful character. How can I help you today?",
-            "Hey there! How can I help you today?",
-            "Hello! How can I help you today?",
-            "Hi! How can I help you today?",
-            "Hey! How can I help you today?"
+          "startDialogue": "0,1",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "food": [
+            {
+              "key": "chicken",
+              "dialogue": "unngaaa",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            },
+            {
+              "key": "protein-powder",
+              "dialogue": "bungaaa",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            }
           ]
         }
       ]
@@ -43,38 +48,38 @@
           "name": "Jim",
           "image": "./public/assets/character/jim.png",
           "description": "description",
+          "startDialogue": "3",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
           "food": [
             {
               "key": "chicken",
+              "dialogue": "chicken on day 2",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            },
+            {
+              "key": "protein-powder",
+              "dialogue": "Needed this for my workout today, I have to make sure my diet is perfect!",
               "image": "./public/assets/food/filler_food_item_replace_later.png"
             }
-          ],
-          "dialogue": [
-            "Hi there! How can I help you today?",
-            "I'm Jim, your friendly and helpful character. How can I help you today?",
-            "Hey there! How can I help you today?",
-            "Hello! How can I help you today?",
-            "Hi! How can I help you today?",
-            "Hey! How can I help you today?"
           ]
         },
         {
           "name": "cammy",
           "image": "./public/assets/character/jim.png",
+          "startDialogue": "IM NEW",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
           "description": "description",
           "food": [
-            "./public/assets/food/filler_food_item_replace_later.png",
-            "./public/assets/food/filler_food_item_replace_later.png",
-            "./public/assets/food/filler_food_item_replace_later.png",
-            "./public/assets/food/filler_food_item_replace_later.png"
-          ],
-          "dialogue": [
-            "Hi there! How can I help you today?",
-            "I'm Jim, your friendly and helpful character. How can I help you today?",
-            "Hey there! How can I help you today?",
-            "Hello! How can I help you today?",
-            "Hi! How can I help you today?",
-            "Hey! How can I help you today?"
+            {
+              "key": "chicken",
+              "dialogue": "unngaaa",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            },
+            {
+              "key": "protein-powder",
+              "dialogue": "bungaaa",
+              "image": "./public/assets/food/filler_food_item_replace_later.png"
+            }
           ]
         }
       ]
