@@ -1,0 +1,149 @@
+{
+  "days": [
+    {
+      "characters": [
+        {
+          "name": "Jim",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "Hey, it's you again!",
+          "endDialogue": "Thank you, have a nice day!",
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "name": "cammy",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "hello",
+          "endDialogue": "done",
+          "groceries": [
+            [
+              {
+                "dialogue": "meaaaat",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  },
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "characters": [
+        {
+          "name": "Jim",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "3",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "name": "cammy",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "IM NEW",
+          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "description": "description",
+          "groceries": [
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+                "food": [
+                  {
+                    "price": 10.0,
+                    "key": "chicken",
+                    "image": "./public/assets/food/filler_food_item_replace_later.png"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

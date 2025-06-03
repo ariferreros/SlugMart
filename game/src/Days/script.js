@@ -24,5 +24,5 @@ export async function startDay1(app) {
 
   //   console.log(foodSet)
   const trackedFoodItems = []
-  loadFood(foreground, trackedFoodItems, dropZone, Char1.food.Day1, app.screen)
+  loadFood(foreground, trackedFoodItems, dropZone, Char1.food.Day1, app)
 }
