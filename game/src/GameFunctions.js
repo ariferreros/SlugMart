@@ -64,7 +64,7 @@ export async function loadForeground(app) {
 }
 
 export function createDropZone(screen) {
-  const dropZone = new Graphics().rect(0, 0, 200, 200).fill(0x000000)
+  const dropZone = new Graphics().rect(0, 0, 300, 200).fill(0x000000)
 
   dropZone.position.set(screen.width * 0.8 - 100, screen.height * 0.7 - 100)
 
