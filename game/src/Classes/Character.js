@@ -9,6 +9,7 @@ export class Character extends Sprite {
   enterScene() {
     this.texture.console.log('character entered')
     // this.position.set()
+    //put Chars in list, iterate over list through day to alternate char, drag in char
   }
   leaveScene() {
     this.texture.console.log('character left')
