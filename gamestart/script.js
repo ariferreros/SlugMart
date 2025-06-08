@@ -42,9 +42,11 @@ async function characterEnter() {
     $('.character').animate({ left: '5%' }, 1000, resolve)
     console.log('Character enters')
   })
-  dialog.showCharacterTextBox(
-    data.days[currentDay].characters[currentChar].startDialogue
-  )
+  if (data.days[currentDay].characters[currentChar].startDialogue) {
+    dialog.showCharacterTextBox(
+      data.days[currentDay].characters[currentChar].startDialogue
+    )
+  }
 }
 
 export async function nextCharacter() {

@@ -252,7 +252,7 @@
           "name": "Jim Golds",
           "image": "./public/assets/character/jim.png",
           "startDialogue": "Oh hey, it's funny seeing you again.",
-          "endDialogue": "They will never understand a situation like mine, I need to get out of here.",
+          "endDialogue": "I am done with putting pollutants in my body!",
           "description": "description",
           "groceries": [
             {
@@ -276,12 +276,314 @@
               ]
             },
             {
-              "dialogue": "",
+              "dialogue": "I have been getting all of my workout tips from him recently, but he’s been telling me that the next step forward is to start making real lifestyle changes.",
               "food": [
                 {
                   "price": 10.0,
                   "key": "water",
                   "image": "./public/assets/food/water.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "This was one of the first things he recommended I try, introducing raw milk into my diet rather than using any of the fake alternatives. I plan on using this with my protein powder to really get the maximum gains.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "milk",
+                  "image": "./public/assets/food/milk.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "This was one of the other most important tips he gave me, NO MORE SEED OILS. I have been making the terrible mistake of using all the wrong oils when I cook my unseasoned chicken and rice when I should have been using tallow all this time.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "beeftallow",
+                  "image": "./public/assets/food/beeftallow.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Carrie On",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Ah just stopping by the grocery store on my way home, I can't wait to cook a nice homemade meal for my kids.",
+          "endDialogue": "Thank you, have a nice day.",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "We've only really eaten out these past couple of days, waiting for my EBT card to refill.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "frozenpizza",
+                  "image": "./public/assets/food/frozenpizza.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Oh I love these as breakfast essentials and they go such a long way which is nice later in the week.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "eggs",
+                  "image": "./public/assets/food/eggs.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "bread",
+                  "image": "./public/assets/food/bread.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I really try to maximize every food group and make sure I am eating a healthy meal even though I am on a strict budget! I have to make sure I am feeling good for these long days.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "strawberries",
+                  "image": "./public/assets/food/strawberries.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "broccoli",
+                  "image": "./public/assets/food/broccoli.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "pasta",
+                  "image": "./public/assets/food/pasta.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Oh no! I forgot that they banned sugary drinks like soda from being accepted by my EBT card. Oh, that is so frustrating I was not prepared to pay the full price of that but I have to be able to have some small things for myself right? Oh well..",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "characters": [
+        {
+          "name": "Jesus",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "Hey! I finally heard back from a job, and now that I meet the minimum required work hours for an able-bodied person, I finally was able to get an EBT Card set up. ",
+          "endDialogue": "Thank you, have a good one!",
+          "groceries": [
+            {
+              "dialogue": "This is the first time in a while that I can really buy something a little bit more expensive!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "strawberries",
+                  "image": "./public/assets/food/strawberries.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I know they got rid of all the sugary stuff for EBT, but honestly I am just happy to be eating something that isn’t ramen or the usual hotdogs, honestly. It is nice to know I can walk in here and get something like bread when I need to.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "bread",
+                  "image": "./public/assets/food/bread.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Haha! I used to love eating these as a kid and ever since I have been craving when I could finally start buying my own again. I am not used to cooking just yet, so these will help me out greatly.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "frozenpizza",
+                  "image": "./public/assets/food/frozenpizza.png"
+                }
+              ]
+            },
+            {
+              "dialogue": " I guess old habits die hard, but these feel a bit comforting now that I can buy all sorts of different food. I know I will love these, and for once I don’t have to worry about how much they will cost. EBT has truly changed my life!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "ramen",
+                  "image": "./public/assets/food/ramen.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nicki Swiper",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Wow, that guy sure seemed amped to buy some bread, huh? I have no idea what he was talking about.",
+          "endDialogue": " I don’t need to mess with that EBT stuff, I would hate to be perceived as though I could not buy my own groceries…",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "Anyway, I will just take this candy bar, please.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "candybar",
+                  "image": "./public/assets/food/candybar.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Carrie On",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "I can’t wait to get back home and relax after such a long day.",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "I’m even going to buy a couple of “luxury” items today because I need a treat!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "pasta",
+                  "image": "./public/assets/food/pasta.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "rice",
+                  "image": "./public/assets/food/rice.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "My kids hate broccoli, but if it allows them to grow up healthier, they are going to have to eat it! I am just waiting for the day they take THAT off of EBT, ugh. It is like they believe that less fortunate people do not deserve some small luxuries.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "broccoli",
+                  "image": "./public/assets/food/broccoli.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Well, I am just glad to be able to go home safely today, but I sure do hope they reverse the ban on sugary products!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "candybar",
+                  "image": "./public/assets/food/candybar.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jim Golds",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Hey, you would not believe the problems I have been having ever since you rang me up last time! ",
+          "endDialogue": "I really learned my lesson, maybe not all “health” products are actually good for my diet!",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "It turns out the guy in my Facebook group was spreading total misinformation about food safety, and we actually had to ban him! I did some further research, and it turns out that drinking raw milk could totally give me sicknesses and stuff. I could not believe it!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "strawberries",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "broccoli",
+                  "image": "./public/assets/food/rice.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/broccoli.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I tried using the beef tallow in place of oils as well for my cooking, and it made me feel terrible before going to the gym. I think I am going to switch out from only using those products the guy mentioned. I want to be able to eat as healthy as possible without getting sick so I am prepared for the gym.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "rice",
+                  "image": "./public/assets/food/rice.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "water",
+                  "image": "./public/assets/food/water.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "_",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Hey there! It’s nice to see you again after I explained the whole situation to you about my sister. ",
+          "endDialogue": "Thank you so much for the help, bye!",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "Yeah, as it turns out, she really loved some of the fresh food that I bought her last time. So today, I am preparing to cook her a fresh, balanced, homemade meal. ",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "pasta",
+                  "image": "./public/assets/food/pasta.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I am so excited to be able to surprise her with all of this. I sometimes get worried about her health when she really only eats all the frozen products. ",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "broccoli",
+                  "image": "./public/assets/food/eggs.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "To top it all off, I am making sure I buy her favorite soda so that she can enjoy her fresh meal with her favorite drink. Even though she faces a tough time buying and using certain groceries, I am happy that I am there for her to provide her with a better alternative!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
                 }
               ]
             }
