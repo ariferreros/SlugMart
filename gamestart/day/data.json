@@ -9,68 +9,152 @@
           "startDialogue": "Hey, it's you again!",
           "endDialogue": "Thank you, have a nice day!",
           "groceries": [
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ]
+            {
+              "dialogue": " I’m just here to pick up the essentials for my macro diet.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                }
+              ]
+            },
+
+            {
+              "dialogue": "Needed this for my workout today, I have to make sure my diet is perfect!",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "proteinpowder",
+                  "image": "./public/assets/food/proteinpowder.png"
+                }
+              ]
+            }
           ]
         },
         {
-          "name": "cammy",
+          "name": "Jesus",
           "image": "./public/assets/character/jim.png",
           "description": "description",
-          "startDialogue": "hello",
-          "endDialogue": "done",
+          "startDialogue": "Hi",
+          "endDialogue": "Anyway, see ya later!",
           "groceries": [
-            [
-              {
-                "dialogue": "meaaaat",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  },
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ]
+            {
+              "dialogue": "Thank god I can get right into these without having to worry much about cooking or anything. They’re cheap too, about the cheapest I could find.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "hotdogs",
+                  "image": "./public/assets/food/hotdogs.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I'm hoping I could get my EBT card back up and running if I can figure out how to work some hours these coming weeks.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "water",
+                  "image": "./public/assets/food/water.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nicki Swiper",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "...",
+          "endDialogue": "Thank you very much!",
+          "groceries": [
+            {
+              "dialogue": "Haha yeah this is totally all I will need for today sir,",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "gum",
+                  "image": "./public/assets/food/gum.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Carrie On",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "startDialogue": "Just making my grocery run before I go home to make dinner for the family!",
+          "endDialogue": "Anyway, have a nice day!",
+          "groceries": [
+            {
+              "dialogue": "I was a little upset about how much they increased the price of chicken per pound, however. Ugh, I guess everything is going up in price.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "pasta",
+                  "image": "./public/assets/food/pasta.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Oh wow, those seem to be quite expensive, I was sure when I picked them up last week they were only a couple of dollars. My kids love them.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "strawberries",
+                  "image": "./public/assets/food/strawberries.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "I know people have been talking about the people who buy their sweets with EBT. I'd just hope they would understand a situation like mine, it's nice to be able to give my kids a treat without going out and spending a lot of money.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "candybar",
+                  "image": "./public/assets/food/candybar.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "_",
+          "image": "./public/assets/character/jim.png",
+          "description": "description",
+          "endDialogue": "Thanks!",
+          "groceries": [
+            {
+              "dialogue": "Yeah, I'm actually here on behalf of my sister, in her old age she just cannot get around as much as she used to. Now I grocery shop for her.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "She can't cook too much anymore, so I mostly just buy her the frozen stuff because it's easier for her, and I always make sure to get her favorite soda too.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "frozenpizza",
+                  "image": "./public/assets/food/frozenpizza.png"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -78,69 +162,129 @@
     {
       "characters": [
         {
-          "name": "Jim",
+          "name": "Nicki Swiper",
           "image": "./public/assets/character/jim.png",
           "description": "description",
-          "startDialogue": "3",
-          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "startDialogue": "Hi how are you?",
+          "endDialogue": "But hey it just isn't possible right now when my job is only giving me one shift a week!",
           "groceries": [
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ]
+            {
+              "dialogue": "I have been really craving a candy bar... and nothing else.  I would love to buy a full cart of groceries...",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "candybar",
+                  "image": "./public/assets/food/candybar.png"
+                }
+              ]
+            }
           ]
         },
         {
-          "name": "cammy",
+          "name": "_",
           "image": "./public/assets/character/jim.png",
-          "startDialogue": "IM NEW",
-          "endDialogue": "That's all I need for today. Thanks for coming by!",
+          "startDialogue": "Hello again!",
+          "endDialogue": "Anyway, have a nice day!",
           "description": "description",
           "groceries": [
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "dialogue": " I’m just here to pick up the essentials for my macro diet.",
-                "food": [
-                  {
-                    "price": 10.0,
-                    "key": "chicken",
-                    "image": "./public/assets/food/filler_food_item_replace_later.png"
-                  }
-                ]
-              }
-            ]
+            {
+              "dialogue": "It seems my sister has run out of her usual stuff so I figured I would drop by after work and pick up some of her favorites.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "frozenpizza",
+                  "image": "./public/assets/food/frozenpizza.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Oh yea! That's her favorite soda right there, she barely ever wants to touch her water when I buy her a new case of these haha.  I like to get her one as a treat every now and then when I pick up her groceries.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "Trying something new today... I am thinking maybe after a while of eating all of the frozen processed stuff she should probably get something different that is really fresh.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "strawberries",
+                  "image": "./public/assets/food/strawberries.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jesus",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Ugh, it's been a tough week.",
+          "endDialogue": "They will never understand a situation like mine, I need to get out of here.",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "Just scan my stuff so I can get out of here.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "soda",
+                  "image": "./public/assets/food/soda.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "All that time trying to find some decent work and I can never so much as get an email back when I checked at the library this morning.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "ramen",
+                  "image": "./public/assets/food/ramen.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jim Golds",
+          "image": "./public/assets/character/jim.png",
+          "startDialogue": "Oh hey, it's funny seeing you again.",
+          "endDialogue": "They will never understand a situation like mine, I need to get out of here.",
+          "description": "description",
+          "groceries": [
+            {
+              "dialogue": "I am just dropping by to pick up some of the week's grocery needs. I have been doing some reading recommended by this guy in this Facebook group I am a part of.",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "chicken",
+                  "image": "./public/assets/food/chicken.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "rice",
+                  "image": "./public/assets/food/rice.png"
+                },
+                {
+                  "price": 10.0,
+                  "key": "broccoli",
+                  "image": "./public/assets/food/broccoli.png"
+                }
+              ]
+            },
+            {
+              "dialogue": "",
+              "food": [
+                {
+                  "price": 10.0,
+                  "key": "water",
+                  "image": "./public/assets/food/water.png"
+                }
+              ]
+            }
           ]
         }
       ]
