@@ -1,0 +1,235 @@
+.drop-zone {
+  position: absolute;
+  width: 15%;
+  height: 20%;
+  left: 80%;
+  bottom: 20%;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* border: 2px dashed #000; */
+}
+.grocery-zone {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+
+  width: 50%;
+  height: 30%;
+  left: -50%;
+  bottom: 20%;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* border: 2px dashed #000; */
+}
+.end-bg {
+  position: absolute;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+
+  height: 100%;
+  width: 100%;
+}
+.charactertextbox {
+  right: 0;
+  display: flex;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  /* border: solid; */
+  width: 50%;
+  font-size: 20px;
+  height: auto;
+  min-height: 100px;
+  background-image: url('public/assets/environment/characterTextBoxBG.png');
+  background-size: 100% 100%; /* width and height, can be %, px or whatever. */
+  z-index: 100;
+}
+
+.scene-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  height: 100%;
+  overflow: hidden;
+}
+.scene-bg {
+  position: absolute;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+
+  height: 100%;
+  width: 100%;
+}
+.scene-element {
+  position: absolute;
+}
+.button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+.scene-fg {
+  position: absolute;
+  background-size: cover;
+  object-fit: fill;
+  background-position: center;
+
+  height: 100%;
+  width: 100%;
+}
+.fg-element {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+.character {
+  width: auto;
+  height: 100%;
+  left: -40%;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+}
+
+.scan-zone {
+  position: absolute;
+  width: 15%;
+  height: 20%;
+  left: 55%;
+  bottom: 10%;
+  /* background-color: rgba(229, 7, 7, 0.3); */
+  /* border: 2px dashed #d80707; */
+}
+/* Add scan flash animation */
+.scan-flash {
+  animation: scanFlash 0.5s ease;
+}
+
+@keyframes scanFlash {
+  0% {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    background-color: rgba(229, 7, 7, 0.3);
+  }
+}
+
+/* Add transition for smoother movement */
+
+/* Search UI */
+.search-header {
+  position: relative;
+  font-size: '30px';
+  gap: '20px';
+  width: 100%;
+  display: flex;
+  height: 10%;
+  display: 'flex';
+  justify-content: 'space-between';
+  align-items: 'center';
+  z-index: 200;
+}
+.search-container {
+  top: 20px;
+  left: 50%;
+  z-index: 200;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 16px;
+
+  background-color: #fffbdb;
+}
+
+.search-input:focus {
+  background-color: #f6ecc0;
+  outline-color: #7ec19e;
+}
+.search-input:focus::placeholder {
+  color: #7ec19e;
+}
+.search-input::placeholder {
+  color: #7ec19e;
+}
+.search-button {
+  padding: 10px 20px;
+  background-color: #e86547;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* Add this to your existing CSS */
+.product-popup {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0;
+  width: 80%;
+  max-height: 80vh;
+  z-index: 2000;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.product-popup h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #222;
+  font-weight: 700;
+}
+
+.product-popup h3 {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #84c3a2;
+  padding-bottom: 8px;
+}
+
+.product-popup p {
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Add scrollbar styling */
+.product-popup ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.product-popup ::-webkit-scrollbar-track {
+  background: #f7ecc1;
+  border-radius: 10px;
+}
+
+.product-popup ::-webkit-scrollbar-thumb {
+  background: #84c3a2;
+  border-radius: 10px;
+}
+
+.product-popup ::-webkit-scrollbar-thumb:hover {
+  background: #66a283;
+}
