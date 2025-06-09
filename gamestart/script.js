@@ -6,8 +6,11 @@
 //   createDropZone,
 // } from '../GameFunctions.js'
 // import { food } from '../Char1/text.js'
+import { food } from '../game/src/Char1/text.js'
 import * as game from './GameFunctions.js'
 import * as dialog from './TextFunctions.js'
+import * as endScreen from './EndScreenFunctions.js'
+
 const data = await importJSON()
 let maxDays = data.days.length
 let maxChars = data.days[0].characters.length
@@ -33,10 +36,17 @@ export function startDay(dayIndex, characterIndex) {
     scanZone,
     groceryZone
   )
-
+  foodEnter()
   characterEnter()
 
   // beginDialog()
+}
+
+async function foodEnter() {
+  await new Promise((resolve) => {
+    $('.grocery-zone').animate({ left: '-.5%' }, 2000, resolve)
+    console.log('Food enters')
+  })
 }
 
 async function characterEnter() {
@@ -53,8 +63,6 @@ async function characterEnter() {
 
 export async function nextCharacter() {
   await characterLeave()
-  await game.loadEndScreen()
-  return
   currentChar++
   if (currentChar >= maxChars) {
     currentChar = 0
@@ -62,8 +70,8 @@ export async function nextCharacter() {
     console.log('proceeding to next day')
     await proceedtoNextDay()
     if (currentDay >= maxDays) {
-      console.log('all done')
-      await game.loadEndScreen()
+      console.log('game complete')
+      await endScreen.loadEndScreen()
       return
     }
   }
@@ -81,6 +89,9 @@ async function characterLeave() {
     await dialog.showCharacterTextBox(
       data.days[currentDay].characters[currentChar].endDialogue
     )
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1000)
+    })
     await dialog.hideCharacterTextBox()
     // wait for character to leave the sceen
     await new Promise((resolve) => {

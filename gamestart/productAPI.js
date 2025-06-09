@@ -31,6 +31,8 @@ export async function searchProducts(query) {
       )}&json=1`
     )
     const data = await response.json()
+    console.log('ok', data)
+
     return data.products || []
   } catch (error) {
     console.error('Error searching products:', error)

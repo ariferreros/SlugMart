@@ -35,41 +35,14 @@ export async function loadForeground() {
   const $counter = $('<img>')
     .addClass('scene-fg')
     .attr('src', './public/assets/environment/belt.png')
-  // .css({
-  //   width: 'auto',
-  //   height: '100%',
-  //   'object-fit': 'contain',
-  //   position: 'absolute',
-  //   top: '50%',
-  //   left: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  // })
 
   const $register = $('<img>')
     .addClass('scene-fg')
     .attr('src', './public/assets/environment/register.png')
-  // .css({
-  //   width: 'auto',
-  //   height: '100%',
-  //   'object-fit': 'contain',
-  //   position: 'absolute',
-  //   top: '50%',
-  //   left: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  // })
 
   const $bag = $('<img>')
     .addClass('scene-fg')
     .attr('src', './public/assets/environment/gameScreenBag.png')
-  // .css({
-  //   width: 'auto',
-  //   height: '100%',
-  //   'object-fit': 'contain',
-  //   position: 'absolute',
-  //   top: '50%',
-  //   left: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  // })
 
   $foreground.append($counter, $register, $bag)
   $('#app').append($foreground)
@@ -116,7 +89,20 @@ export function loadFood(
     drop: function (event, ui) {
       const $draggedItem = ui.helper
       const foodIndex = $draggedItem.data('foodIndex')
+      const indexToRemove = trackedFoodItems.findIndex(
+        (item) => item && item.data('foodIndex') === foodIndex
+      )
 
+      if (indexToRemove !== -1) {
+        trackedFoodItems.splice(indexToRemove, 1)
+        $draggedItem.remove()
+
+        // // Animate remaining items
+        // trackedFoodItems.forEach(($item, newIndex) => {
+        //   const newLeft = startX + newIndex * xSpacing
+        //   $item.animate({ left: `${newLeft}px` }, 500)
+        // })
+      }
       trackedFoodItems = trackedFoodItems.filter(
         (item) => item && item.data('foodIndex') !== foodIndex
       )
@@ -147,7 +133,7 @@ export function loadFood(
             .attr('src', foodItem.image)
             .css({
               cursor: 'grab',
-              border: '2px solid #000',
+              // border: '2px solid #000',
               zIndex: 50,
             })
             .attr('id', foodItem.key)
@@ -155,8 +141,6 @@ export function loadFood(
             .data('foodName', foodItem.key)
             .data('foodIndex', foodIndex)
             .data('hasBeenScanned', false)
-            .data('originalLeft', `${startX + foodIndex * xSpacing}px`)
-            .data('originalTop', `${startY}px`)
             .data('groupIndex', groupIndex)
             .data('barcode', foodItem.barcode)
 
@@ -172,7 +156,8 @@ export function loadFood(
               if (isOverlapping && !$(this).data('hasBeenScanned')) {
                 $(this).data('hasBeenScanned', true)
                 $dropZone.droppable('enable')
-
+                $scanZone.addClass('scan-flash')
+                setTimeout(() => $scanZone.removeClass('scan-flash'), 500)
                 const groupIndex = $(this).data('groupIndex')
                 if (!triggeredDialogues.has(groupIndex)) {
                   triggeredDialogues.add(groupIndex)
@@ -192,7 +177,7 @@ export function loadFood(
               }
             },
             stop: function () {
-              $(this).css('z-index', '')
+              $(this).css('z-index', '50')
 
               $(this).data('wasDropped', false)
             },
@@ -226,6 +211,7 @@ export function loadFood(
 // creates startbutton with class button and id start-button
 // on click runs start day 1 script
 export async function loadHomeScreen() {
+  $('#app').empty()
   const $container = $('<div>').addClass('scene-bg')
   $container.css(
     'background-image',
@@ -262,105 +248,105 @@ export function checkCharacterComplete() {
   script.nextCharacter()
 }
 
-export async function loadEndScreen() {
-  const $container = $('<div>')
-    .addClass('end-bg')
-    .hide()
-    .css('background-color', 'white')
-  console.log('Loading end screen')
-  // Create search UI elements
-  const $searchContainer = $('<div>').addClass('search-container')
-  const $searchInput = $('<input>')
-    .attr('type', 'text')
-    .attr('placeholder', 'Search for products...')
-    .addClass('search-input')
-  const $searchButton = $('<button>').text('Search').addClass('search-button')
-  const $resultsContainer = $('<div>').addClass('results-container')
+// export async function loadEndScreen() {
+//   const $container = $('<div>')
+//     .addClass('end-bg')
+//     .hide()
+//     .css('background-color', 'white')
+//   console.log('Loading end screen')
+//   // Create search UI elements
+//   const $searchContainer = $('<div>').addClass('search-container')
+//   const $searchInput = $('<input>')
+//     .attr('type', 'text')
+//     .attr('placeholder', 'Search for products...')
+//     .addClass('search-input')
+//   const $searchButton = $('<button>').text('Search').addClass('search-button')
+//   const $resultsContainer = $('<div>').addClass('results-container')
 
-  // Add elements to container
-  $searchContainer.append($searchInput, $searchButton)
-  $container.append($searchContainer, $resultsContainer)
+//   // Add elements to container
+//   $searchContainer.append($searchInput, $searchButton)
+//   $container.append($searchContainer, $resultsContainer)
 
-  // Add event listeners
-  $searchButton.on('click', () =>
-    performSearch($searchInput.val(), $resultsContainer)
-  )
-  $searchInput.on('keypress', (e) => {
-    if (e.which === 13) {
-      // Enter key
-      performSearch($searchInput.val(), $resultsContainer)
-    }
-  })
-  $container.append($searchContainer, $resultsContainer)
-  $('#app').append($container)
-  await $container.fadeIn(1000).promise()
-}
+//   // Add event listeners
+//   $searchButton.on('click', () =>
+//     performSearch($searchInput.val(), $resultsContainer)
+//   )
+//   $searchInput.on('keypress', (e) => {
+//     if (e.which === 13) {
+//       // Enter key
+//       performSearch($searchInput.val(), $resultsContainer)
+//     }
+//   })
+//   $container.append($searchContainer, $resultsContainer)
+//   $('#app').append($container)
+//   await $container.fadeIn(1000).promise()
+// }
 
-async function performSearch(query, $resultsContainer) {
-  if (!query || query.trim() === '') {
-    $resultsContainer.html(
-      '<p class="search-message">Please enter a search term</p>'
-    )
-    return
-  }
+// async function performSearch(query, $resultsContainer) {
+//   if (!query || query.trim() === '') {
+//     $resultsContainer.html(
+//       '<p class="search-message">Please enter a search term</p>'
+//     )
+//     return
+//   }
 
-  $resultsContainer.html('<p class="search-message">Searching...</p>')
+//   $resultsContainer.html('<p class="search-message">Searching...</p>')
 
-  try {
-    const products = await searchProducts(query)
+//   try {
+//     const products = await searchProducts(query)
 
-    if (products.length === 0) {
-      $resultsContainer.html(
-        '<p class="search-message">No products found. Try a different search term.</p>'
-      )
-      return
-    }
+//     if (products.length === 0) {
+//       $resultsContainer.html(
+//         '<p class="search-message">No products found. Try a different search term.</p>'
+//       )
+//       return
+//     }
 
-    // Display top 5 products
-    const topProducts = products.slice(0, 5)
-    const $productList = $('<div>').addClass('product-list')
+//     // Display top 5 products
+//     const topProducts = products.slice(0, 5)
+//     const $productList = $('<div>').addClass('product-list')
 
-    topProducts.forEach((product) => {
-      const $productCard = $('<div>').addClass('product-card')
+//     topProducts.forEach((product) => {
+//       const $productCard = $('<div>').addClass('product-card')
 
-      // Create elements for each product property
-      const $name = $('<h3>').text(product.product_name || 'Name not available')
-      const $brand = $('<p>').html(
-        `<strong>Brand:</strong> ${product.brands || 'Not specified'}`
-      )
-      const $barcode = $('<p>').html(
-        `<strong>Barcode:</strong> ${product.code || 'N/A'}`
-      )
+//       // Create elements for each product property
+//       const $name = $('<h3>').text(product.product_name || 'Name not available')
+//       const $brand = $('<p>').html(
+//         `<strong>Brand:</strong> ${product.brands || 'Not specified'}`
+//       )
+//       const $barcode = $('<p>').html(
+//         `<strong>Barcode:</strong> ${product.code || 'N/A'}`
+//       )
 
-      // Format ingredients (might be very long)
-      let ingredientsText =
-        product.ingredients_text || 'Ingredients not specified'
-      if (ingredientsText.length > 150) {
-        ingredientsText = ingredientsText.substring(0, 150) + '...'
-      }
-      const $ingredients = $('<p>').html(
-        `<strong>Ingredients:</strong> ${ingredientsText}`
-      )
+//       // Format ingredients (might be very long)
+//       let ingredientsText =
+//         product.ingredients_text || 'Ingredients not specified'
+//       if (ingredientsText.length > 150) {
+//         ingredientsText = ingredientsText.substring(0, 150) + '...'
+//       }
+//       const $ingredients = $('<p>').html(
+//         `<strong>Ingredients:</strong> ${ingredientsText}`
+//       )
 
-      // Add product image if available
-      let $image = $('<div>').addClass('product-image-placeholder')
-      if (product.image_url) {
-        $image = $('<img>')
-          .attr('src', product.image_url)
-          .attr('alt', product.product_name || 'Product image')
-          .addClass('product-image')
-      }
+//       // Add product image if available
+//       let $image = $('<div>').addClass('product-image-placeholder')
+//       if (product.image_url) {
+//         $image = $('<img>')
+//           .attr('src', product.image_url)
+//           .attr('alt', product.product_name || 'Product image')
+//           .addClass('product-image')
+//       }
 
-      // Append all elements to product card
-      $productCard.append($image, $name, $brand, $barcode, $ingredients)
-      $productList.append($productCard)
-    })
+//       // Append all elements to product card
+//       $productCard.append($image, $name, $brand, $barcode, $ingredients)
+//       $productList.append($productCard)
+//     })
 
-    $resultsContainer.empty().append($productList)
-  } catch (error) {
-    console.error('Search error:', error)
-    $resultsContainer.html(
-      '<p class="search-message error">An error occurred during search. Please try again.</p>'
-    )
-  }
-}
+//     $resultsContainer.empty().append($productList)
+//   } catch (error) {
+//     console.error('Search error:', error)
+//     $resultsContainer.html(
+//       '<p class="search-message error">An error occurred during search. Please try again.</p>'
+//     )
+//   }
+// }

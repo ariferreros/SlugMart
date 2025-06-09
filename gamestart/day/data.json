@@ -4,7 +4,7 @@
       "characters": [
         {
           "name": "Jim",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/JimGolds.png",
           "description": "description",
           "startDialogue": "Hey, it's you again!",
           "endDialogue": "Thank you, have a nice day!",
@@ -36,7 +36,7 @@
         },
         {
           "name": "Jesus",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/Jesus.png",
           "description": "description",
           "startDialogue": "Hi",
           "endDialogue": "Anyway, see ya later!",
@@ -67,7 +67,7 @@
         },
         {
           "name": "Nicki Swiper",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/NickiSwiper.png",
           "description": "description",
           "startDialogue": "...",
           "endDialogue": "Thank you very much!",
@@ -87,7 +87,7 @@
         },
         {
           "name": "Carrie On",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/CarrieOn.png",
           "description": "description",
           "startDialogue": "Just making my grocery run before I go home to make dinner for the family!",
           "endDialogue": "Anyway, have a nice day!",
@@ -169,7 +169,7 @@
       "characters": [
         {
           "name": "Nicki Swiper",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/NickiSwiper.png",
           "description": "description",
           "startDialogue": "Hi how are you?",
           "endDialogue": "But hey it just isn't possible right now when my job is only giving me one shift a week!",
@@ -231,7 +231,7 @@
         },
         {
           "name": "Jesus",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/Jesus.png",
           "startDialogue": "Ugh, it's been a tough week.",
           "endDialogue": "They will never understand a situation like mine, I need to get out of here.",
           "description": "description",
@@ -262,7 +262,7 @@
         },
         {
           "name": "Jim Golds",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/JimGolds.png",
           "startDialogue": "Oh hey, it's funny seeing you again.",
           "endDialogue": "I am done with putting pollutants in my body!",
           "description": "description",
@@ -327,7 +327,7 @@
         },
         {
           "name": "Carrie On",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/CarrieOn.png",
           "startDialogue": "Ah just stopping by the grocery store on my way home, I can't wait to cook a nice homemade meal for my kids.",
           "endDialogue": "Thank you, have a nice day.",
           "description": "description",
@@ -408,7 +408,7 @@
       "characters": [
         {
           "name": "Jesus",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/Jesus.png",
           "description": "description",
           "startDialogue": "Hey! I finally heard back from a job, and now that I meet the minimum required work hours for an able-bodied person, I finally was able to get an EBT Card set up. ",
           "endDialogue": "Thank you, have a good one!",
@@ -461,7 +461,7 @@
         },
         {
           "name": "Nicki Swiper",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/NickiSwiper.png",
           "startDialogue": "Wow, that guy sure seemed amped to buy some bread, huh? I have no idea what he was talking about.",
           "endDialogue": " I don’t need to mess with that EBT stuff, I would hate to be perceived as though I could not buy my own groceries…",
           "description": "description",
@@ -481,7 +481,7 @@
         },
         {
           "name": "Carrie On",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/CarrieOn.png",
           "startDialogue": "I can’t wait to get back home and relax after such a long day.",
           "description": "description",
           "groceries": [
@@ -540,7 +540,7 @@
         },
         {
           "name": "Jim Golds",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/JimGolds.png",
           "startDialogue": "Hey, you would not believe the problems I have been having ever since you rang me up last time! ",
           "endDialogue": "I really learned my lesson, maybe not all “health” products are actually good for my diet!",
           "description": "description",
