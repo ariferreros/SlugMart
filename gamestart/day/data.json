@@ -15,11 +15,7 @@
                 {
                   "price": 10.0,
                   "key": "chicken",
-                  "image": "./public/assets/food/chicken.png"
-                },
-                {
-                  "price": 10.0,
-                  "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 }
               ]
@@ -31,6 +27,7 @@
                 {
                   "price": 10.0,
                   "key": "proteinpowder",
+                  "barcode": "748927028706",
                   "image": "./public/assets/food/proteinpowder.png"
                 }
               ]
@@ -50,6 +47,7 @@
                 {
                   "price": 10.0,
                   "key": "hotdogs",
+                  "barcode": "044700000632",
                   "image": "./public/assets/food/hotdogs.png"
                 }
               ]
@@ -60,6 +58,7 @@
                 {
                   "price": 10.0,
                   "key": "water",
+                  "barcode": "035733002953",
                   "image": "./public/assets/food/water.png"
                 }
               ]
@@ -79,6 +78,7 @@
                 {
                   "price": 10.0,
                   "key": "gum",
+                  "barcode": "02289106",
                   "image": "./public/assets/food/gum.png"
                 }
               ]
@@ -98,11 +98,13 @@
                 {
                   "price": 10.0,
                   "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 },
                 {
                   "price": 10.0,
                   "key": "pasta",
+                  "barcode": "076808005844",
                   "image": "./public/assets/food/pasta.png"
                 }
               ]
@@ -113,6 +115,7 @@
                 {
                   "price": 10.0,
                   "key": "strawberries",
+                  "barcode": "715756200023",
                   "image": "./public/assets/food/strawberries.png"
                 }
               ]
@@ -123,6 +126,7 @@
                 {
                   "price": 10.0,
                   "key": "candybar",
+                  "barcode": "5000159461122",
                   "image": "./public/assets/food/candybar.png"
                 }
               ]
@@ -141,6 +145,7 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 }
               ]
@@ -151,6 +156,7 @@
                 {
                   "price": 10.0,
                   "key": "frozenpizza",
+                  "barcode": "075706191024",
                   "image": "./public/assets/food/frozenpizza.png"
                 }
               ]
@@ -174,6 +180,7 @@
                 {
                   "price": 10.0,
                   "key": "candybar",
+                  "barcode": "5000159461122",
                   "image": "./public/assets/food/candybar.png"
                 }
               ]
@@ -193,6 +200,7 @@
                 {
                   "price": 10.0,
                   "key": "frozenpizza",
+                  "barcode": "075706191024",
                   "image": "./public/assets/food/frozenpizza.png"
                 }
               ]
@@ -203,6 +211,7 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 }
               ]
@@ -213,6 +222,7 @@
                 {
                   "price": 10.0,
                   "key": "strawberries",
+                  "barcode": "715756200023",
                   "image": "./public/assets/food/strawberries.png"
                 }
               ]
@@ -232,6 +242,7 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 }
               ]
@@ -242,6 +253,7 @@
                 {
                   "price": 10.0,
                   "key": "ramen",
+                  "barcode": "070662010037",
                   "image": "./public/assets/food/ramen.png"
                 }
               ]
@@ -261,16 +273,19 @@
                 {
                   "price": 10.0,
                   "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 },
                 {
                   "price": 10.0,
                   "key": "rice",
+                  "barcode": "0065528874496",
                   "image": "./public/assets/food/rice.png"
                 },
                 {
                   "price": 10.0,
                   "key": "broccoli",
+                  "barcode": "3560071019570",
                   "image": "./public/assets/food/broccoli.png"
                 }
               ]
@@ -281,6 +296,7 @@
                 {
                   "price": 10.0,
                   "key": "water",
+                  "barcode": "035733002953",
                   "image": "./public/assets/food/water.png"
                 }
               ]
@@ -291,7 +307,8 @@
                 {
                   "price": 10.0,
                   "key": "milk",
-                  "image": "./public/assets/food/milk.png"
+                  "barcode": "0835204000019",
+                  "image": "./public/assets/food/rawmilk.png"
                 }
               ]
             },
@@ -301,6 +318,7 @@
                 {
                   "price": 10.0,
                   "key": "beeftallow",
+                  "barcode": "0732153925731",
                   "image": "./public/assets/food/beeftallow.png"
                 }
               ]
@@ -320,6 +338,7 @@
                 {
                   "price": 10.0,
                   "key": "frozenpizza",
+                  "barcode": "075706191024",
                   "image": "./public/assets/food/frozenpizza.png"
                 }
               ]
@@ -330,11 +349,13 @@
                 {
                   "price": 10.0,
                   "key": "eggs",
+                  "barcode": "4088700083253",
                   "image": "./public/assets/food/eggs.png"
                 },
                 {
                   "price": 10.0,
                   "key": "bread",
+                  "barcode": "5010044006529",
                   "image": "./public/assets/food/bread.png"
                 }
               ]
@@ -345,21 +366,25 @@
                 {
                   "price": 10.0,
                   "key": "strawberries",
+                  "barcode": "715756200023",
                   "image": "./public/assets/food/strawberries.png"
                 },
                 {
                   "price": 10.0,
                   "key": "broccoli",
+                  "barcode": "3560071019570",
                   "image": "./public/assets/food/broccoli.png"
                 },
                 {
                   "price": 10.0,
                   "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 },
                 {
                   "price": 10.0,
                   "key": "pasta",
+                  "barcode": "076808005844",
                   "image": "./public/assets/food/pasta.png"
                 }
               ]
@@ -370,6 +395,7 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 }
               ]
@@ -393,6 +419,7 @@
                 {
                   "price": 10.0,
                   "key": "strawberries",
+                  "barcode": "715756200023",
                   "image": "./public/assets/food/strawberries.png"
                 }
               ]
@@ -403,6 +430,7 @@
                 {
                   "price": 10.0,
                   "key": "bread",
+                  "barcode": "5010044006529",
                   "image": "./public/assets/food/bread.png"
                 }
               ]
@@ -413,6 +441,7 @@
                 {
                   "price": 10.0,
                   "key": "frozenpizza",
+                  "barcode": "075706191024",
                   "image": "./public/assets/food/frozenpizza.png"
                 }
               ]
@@ -423,6 +452,7 @@
                 {
                   "price": 10.0,
                   "key": "ramen",
+                  "barcode": "070662010037",
                   "image": "./public/assets/food/ramen.png"
                 }
               ]
@@ -442,6 +472,7 @@
                 {
                   "price": 10.0,
                   "key": "candybar",
+                  "barcode": "5000159461122",
                   "image": "./public/assets/food/candybar.png"
                 }
               ]
@@ -460,16 +491,19 @@
                 {
                   "price": 10.0,
                   "key": "pasta",
+                  "barcode": "076808005844",
                   "image": "./public/assets/food/pasta.png"
                 },
                 {
                   "price": 10.0,
                   "key": "rice",
+                  "barcode": "0065528874496",
                   "image": "./public/assets/food/rice.png"
                 },
                 {
                   "price": 10.0,
                   "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 }
               ]
@@ -480,6 +514,7 @@
                 {
                   "price": 10.0,
                   "key": "broccoli",
+                  "barcode": "3560071019570",
                   "image": "./public/assets/food/broccoli.png"
                 }
               ]
@@ -490,11 +525,13 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 },
                 {
                   "price": 10.0,
                   "key": "candybar",
+                  "barcode": "5000159461122",
                   "image": "./public/assets/food/candybar.png"
                 }
               ]
@@ -514,17 +551,20 @@
                 {
                   "price": 10.0,
                   "key": "strawberries",
-                  "image": "./public/assets/food/chicken.png"
+                  "barcode": "715756200023",
+                  "image": "./public/assets/food/strawberries.png"
                 },
                 {
                   "price": 10.0,
                   "key": "broccoli",
-                  "image": "./public/assets/food/rice.png"
+                  "barcode": "3560071019570",
+                  "image": "./public/assets/food/broccoli.png"
                 },
                 {
                   "price": 10.0,
                   "key": "chicken",
-                  "image": "./public/assets/food/broccoli.png"
+                  "barcode": "274036106597",
+                  "image": "./public/assets/food/chicken.png"
                 }
               ]
             },
@@ -534,11 +574,13 @@
                 {
                   "price": 10.0,
                   "key": "rice",
+                  "barcode": "0065528874496",
                   "image": "./public/assets/food/rice.png"
                 },
                 {
                   "price": 10.0,
                   "key": "water",
+                  "barcode": "035733002953",
                   "image": "./public/assets/food/water.png"
                 }
               ]
@@ -558,11 +600,13 @@
                 {
                   "price": 10.0,
                   "key": "chicken",
+                  "barcode": "274036106597",
                   "image": "./public/assets/food/chicken.png"
                 },
                 {
                   "price": 10.0,
                   "key": "pasta",
+                  "barcode": "076808005844",
                   "image": "./public/assets/food/pasta.png"
                 }
               ]
@@ -573,6 +617,7 @@
                 {
                   "price": 10.0,
                   "key": "broccoli",
+                  "barcode": "3560071019570",
                   "image": "./public/assets/food/eggs.png"
                 }
               ]
@@ -583,6 +628,7 @@
                 {
                   "price": 10.0,
                   "key": "soda",
+                  "barcode": "3502110008329",
                   "image": "./public/assets/food/soda.png"
                 }
               ]

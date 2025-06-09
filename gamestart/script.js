@@ -21,6 +21,7 @@ export function startDay(dayIndex, characterIndex) {
   game.loadBackground()
   game.loadCharacter(data.days[dayIndex].characters[characterIndex])
   game.loadForeground()
+  const groceryZone = game.createGroceryZone()
   const scanZone = game.createScanZone()
   const dropZone = game.createDropZone()
   dialog.loadCharacterTextBox()
@@ -29,7 +30,8 @@ export function startDay(dayIndex, characterIndex) {
     trackedFoodItems,
     data.days[dayIndex].characters[characterIndex].groceries,
     dropZone,
-    scanZone
+    scanZone,
+    groceryZone
   )
 
   characterEnter()
@@ -50,29 +52,36 @@ async function characterEnter() {
 }
 
 export async function nextCharacter() {
+  await characterLeave()
+  await game.loadEndScreen()
+  return
   currentChar++
   if (currentChar >= maxChars) {
     currentChar = 0
     currentDay++
     console.log('proceeding to next day')
+    await proceedtoNextDay()
     if (currentDay >= maxDays) {
       console.log('all done')
+      await game.loadEndScreen()
       return
     }
   }
 
   // Wait for characterLeave to complete before starting next day
-  await characterLeave()
   startDay(currentDay, currentChar)
 }
 
+async function proceedtoNextDay() {
+  await game.loadNextDayScreen()
+}
 async function characterLeave() {
   try {
     // Show leaving dialogue
     await dialog.showCharacterTextBox(
       data.days[currentDay].characters[currentChar].endDialogue
     )
-
+    await dialog.hideCharacterTextBox()
     // wait for character to leave the sceen
     await new Promise((resolve) => {
       $('.character').animate({ left: '120%' }, 3000, resolve)

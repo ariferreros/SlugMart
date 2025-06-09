@@ -10,6 +10,15 @@ export async function showCharacterTextBox(text) {
   })
 }
 
+export async function hideCharacterTextBox() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const $textbox = $('#app').find('.charactertextbox')
+      $textbox.fadeOut(400, resolve)
+    }, 1700) // Wait 3 seconds before fading out
+  })
+}
+
 export async function onItemScanned(text) {
   await showCharacterTextBox(text)
   await new Promise((resolve) => setTimeout(resolve, 4000))
