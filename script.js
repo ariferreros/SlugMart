@@ -15,7 +15,7 @@ let maxDays = data.days.length
 let maxChars = data.days[0].characters.length
 let currentDay = 0
 let currentChar = 0
-export function startDay(dayIndex, characterIndex) {
+export async function startDay(dayIndex, characterIndex) {
   console.log(data)
   console.log('Starting Day 1 and first character')
 
@@ -37,8 +37,6 @@ export function startDay(dayIndex, characterIndex) {
   )
   foodEnter()
   characterEnter()
-
-  // beginDialog()
 }
 
 async function foodEnter() {

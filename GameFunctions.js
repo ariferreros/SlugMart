@@ -234,13 +234,55 @@ export async function loadHomeScreen() {
 }
 
 export async function loadNextDayScreen() {
+  // Create container and elements
   const $container = $('<div>').addClass('scene-bg')
+  const $sky = $('<div>').addClass('sky')
+  const $store = $('<div>').addClass('store')
+  const $text = $('<div>').text('Proceeding to next week...')
+  // Set images
+  $sky.css(
+    'background-image',
+    'url("./public/assets/environment/transition/sky.png")'
+  )
+  $store.css(
+    'background-image',
+    'url("./public/assets/environment/transition/bg.png")'
+  )
 
-  $container.css('background-color', 'white').appendTo('body').hide()
+  // Build hierarchy
+
+  $container.append($sky, $store, $text).appendTo('body').hide()
+
+  // Fade in both elements
   await $container.fadeIn(1000).promise()
-  await new Promise((resolve) => setTimeout(resolve, 5000))
-  await $container.fadeOut(1000).promise()
 
+  // Calculate animation duration based on sky height
+  const skyHeight = parseInt($sky.css('background-size').split(' ')[1])
+  const viewportHeight = $(window).height()
+  const scrollDistance = skyHeight - viewportHeight
+  // const duration = Math.max(5000, (scrollDistance / 100) * 50) // Minimum 5s
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1000)
+  })
+
+  // Animate sky scrolling
+  $sky.css('background-position-y', '0')
+  await new Promise((resolve) => {
+    $sky.animate(
+      { backgroundPositionY: '110%' },
+      {
+        duration: 3000,
+        easing: 'linear',
+        complete: resolve,
+      }
+    )
+  })
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
+  // Fade out both elements
+  await $container.fadeOut(1000).promise()
   $container.remove()
 }
 export function checkCharacterComplete() {

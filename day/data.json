@@ -135,7 +135,7 @@
         },
         {
           "name": "_",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/guy.png",
           "description": "description",
           "endDialogue": "Thanks!",
           "groceries": [
@@ -189,7 +189,7 @@
         },
         {
           "name": "_",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/guy.png",
           "startDialogue": "Hello again!",
           "endDialogue": "Anyway, have a nice day!",
           "description": "description",
@@ -589,7 +589,7 @@
         },
         {
           "name": "_",
-          "image": "./public/assets/character/jim.png",
+          "image": "./public/assets/character/guy.png",
           "startDialogue": "Hey there! It’s nice to see you again after I explained the whole situation to you about my sister. ",
           "endDialogue": "Thank you so much for the help, bye!",
           "description": "description",
